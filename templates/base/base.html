@@ -1,0 +1,189 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block header %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  {% endblock header %}
+</head>
+<body>
+
+
+
+<nav class="navbar navbar-expand-sm navbar-blue">
+  <div class="container-fluid">
+  
+
+    <a class="navbar-brand" href="{% url 'home' %}">KTP</a>
+    <button class="navbar-toggler the-menu-bar" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+      <span class="material-symbols-outlined" style="color: white;">
+        menu
+        </span>
+      </button>
+    <div class="collapse navbar-collapse" id="mynavbar">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'about' %}">About</a>
+        </li>
+      </ul>
+
+      <form class="form-for-search-nav">
+        <input class="nav-input-for-search" type="text" placeholder="Search" >
+        <a class="search-button" type="button"><span style="font-size: 23px; margin-bottom: -5px;" class="material-symbols-outlined">
+          search
+          </span>
+        </a>
+      </form>
+      {% if user.is_authenticated %}
+      
+</div></div> <a class="navbar-brand avator" href="{% url 'profile' %}">
+        <img src="{% static 'images/user.png' %}" alt="Avatar Logo"  class="rounded-pill"> 
+      </a>
+
+      {% else %}
+         <li  class="nav-item1 signup-link">
+          <a  href="{% url 'signup' %}">Signup</a>
+         </li>
+         <li  class="nav-item1">
+          <a href="{% url 'login' %}">Login</a>
+         </li>
+      {% endif %}
+
+
+
+<style>
+  .nav-item1{
+    list-style: none;
+  }
+  .nav-item1 a{
+    color:white;
+    text-decoration: none;
+    margin-right:20px;
+  }
+ .signup-link{
+  margin-left:103px;
+ }
+
+  .form-for-search-nav{
+  border: 1px solid white;
+  display: flex;
+  border-radius: 5px;
+  }
+  .form-for-search-nav input{
+    background-color: transparent;
+    border: 1px solid transparent;
+    width:100%;
+    padding:5px;
+    color:white;
+  }
+  .form-for-search-nav input:focus{
+    border:1px solid none !important;
+  }
+  .form-for-search-nav a{
+    color: white;
+    font-weight: bold;
+    padding:9px;
+  }
+
+  .form-for-search-nav:focus{
+        border: 1px solid #FAD201; 
+        transition: 0.3s ease-out;
+  }
+</style>
+
+
+  
+ 
+</nav>
+
+
+<style>
+  body{
+    margin:0px;
+    padding:0px;
+    font-family: "poppins",sans-serif;
+  }
+
+  .nav-bar{
+    position: absolute;
+  }
+    .navbar-blue{
+        background-color:  #0cc902;
+        color:white;
+        padding: 15px;
+    }
+
+    .avator{
+        margin-left:100px;
+    }
+      .nav-item a{
+      color:white;
+    }
+ .nav-item a:hover{
+  color:rgba(255, 255, 255, 0.781);
+ }
+
+    .navbar-brand{
+      color:white;
+      font-size:34px;
+    }
+
+    .navbar-brand:hover{
+      color:white;
+    }
+ 
+    input:focus {
+        border: 1px solid #FAD201; 
+        transition: 0.3s ease-out;
+    }
+
+    .avator img{
+      width:37px;
+    }
+
+    @media(max-width:578px){
+      .navbar-blue{
+        padding: 10px;
+    }
+      .avator{
+        margin-left:0px;
+        position: absolute;
+        right: 20%;
+        top:9%;
+      }
+
+      .avator img{
+        width:35px
+      }
+      .the-menu-bar{
+      position:relative;
+      right:-5%;
+    }
+    .signup-link{
+  margin-left:0px;
+  margin-bottom:5px;
+  margin-top:5px;
+ }
+    }
+</style>
+
+
+{% block content %}
+
+{% endblock %}
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+

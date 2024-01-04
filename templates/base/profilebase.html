@@ -1,0 +1,87 @@
+<div class="container-for-profile-nav">
+    <div class="the-profile-menu" id="menu-open">
+    <span class="material-symbols-outlined">
+        menu_open 
+    </span><a>Menu</a>
+</div>
+
+    <ul>
+        <a href=""><li>Profile</li></a>
+        <a href=""><li>Notifications</li></a>
+        <a href=""><li>Payment</li></a>
+        <a href=""><li>Customization</li></a>
+        <a href=""><li>Orders and receipts</li></a>
+        <a href=""><li>Benefits</li></a>
+        <a href=""><li>Logout</li></a>
+    </ul>
+</div>
+
+
+<style>
+.container-for-profile-nav{
+    width: 21%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    height: 100vh;
+    position: absolute;
+    transition: left 0.3s ease; /* Add transition for smooth animation */
+    left:0px;
+    z-index: 9;
+}
+
+.container-for-profile-nav.closed {
+        left: -21%; /* Move the menu off-screen when closed */
+    }
+.the-profile-menu{
+     position: absolute;
+    right: -65px;
+    font-weight: bold;
+    top:5px;
+    cursor: pointer;
+}
+.container-for-profile-nav a{
+   font-weight: 100;
+   position: relative;
+   top:-7px;
+}
+.container-for-profile-nav ul{
+    margin-top:20px;
+    margin-left: -30px;
+}
+.container-for-profile-nav li{
+   padding:15px;
+   cursor: pointer;
+    list-style: none;
+    border-bottom:1px solid rgb(236, 230, 230);
+}
+
+a{
+    color:black;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+.container-for-profile-nav li:hover{
+    background-color: rgba(129, 126, 126, 0.308);
+}
+
+@media(max-width:700px){
+.container-for-profile-nav{
+    width:50%;
+    left:-50%;
+}
+.container-for-profile-nav.closed {
+        left: 0%;
+}
+}
+
+
+</style>
+
+<script>
+    document.getElementById('menu-open').addEventListener('click', function () {
+        document.querySelector('.container-for-profile-nav').classList.toggle('closed');
+    });
+</script>
+
