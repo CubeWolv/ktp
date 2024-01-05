@@ -45,7 +45,7 @@
             <p>Send us a message.</p>
     </div>
 
-    <div class="option-contact">
+    <div class="option-contact"  id="showChatButton">
         <span class="material-symbols-outlined">
             speaker_notes
             </span>
@@ -53,6 +53,19 @@
             <p>Engage in a conversation with our customer support team. </p>
     </div>
 </div>
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('showChatButton').addEventListener('click', function () {
+      if (typeof Chatling !== 'undefined') {
+        Chatling.openChat();
+      } else {
+        console.error('Chatling script not loaded.');
+      }
+    });
+  });
+</script>  
 
 <style>
     .get-in-touch{
@@ -109,6 +122,20 @@
 </style>
 
 
+
+
+
+
+
+
+
+
+<script async data-id="5825246867" id="chatling-embed-script" type="text/javascript" src="https://chatling.ai/js/embed.js"></script>
+
+
+
+
 {% include 'base/footer.html' %}
 
 {% endblock content %}
+

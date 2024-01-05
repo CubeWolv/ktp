@@ -1,7 +1,7 @@
 {% extends 'base/base.html' %}{% load static %}
 
 {% block header %}
-<title>GamersStudio | Signup</title>
+<title>KTP | Signup</title>
 <meta name="description" content="blog">
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta charset="UTF">
@@ -28,7 +28,14 @@
         
             <input type="text" id="username" name="username" required placeholder="Username"><br>
             <input type="password" id="password" name="password" required placeholder="Password"><br>
-        
+            <a href="{% url 'password_reset' %}" class="reset_password">Forgot your password?</a>
+            <style>
+                .reset_password{
+                    font-size:13px;
+                    margin-left:10px;
+                    color:rgb(0, 185, 0);
+                }
+            </style>
             <input type="submit" value="Login">
             <ul class="messages">
                 {% for message in messages %}

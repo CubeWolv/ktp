@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate ,login as dj_login
 from django.contrib import messages
 from django.contrib.auth.models import User
+from django.contrib.auth import logout
 from .forms import SignupForm
 from django.contrib.auth.decorators import login_required
 
@@ -65,7 +66,9 @@ def signup(request):
 def profile(request):
     return render(request, './profile/profile.html')
 
-
+def custom_logout(request):
+    logout(request)
+    return redirect('home')
 
 
 

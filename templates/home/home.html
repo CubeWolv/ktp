@@ -4,7 +4,7 @@
 
 {% block header %}
 <title>KTP</title>
-<meta name="description" content="blog">
+<meta name="description" content="Travel planner">
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta charset="UTF">
 <meta name="author" content="Imran Abdu">
@@ -164,9 +164,29 @@ box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;      list-style-type: none;
 
 
 
+<form class="the-search-cont-button">
+  <a href="#"><button>Continue</button></a>
+</form>
 
-
-
+<style>
+.the-search-cont-button{
+  position: absolute;
+  left:50%;
+  transform: translateX(-50%);
+  margin-top:30px;
+}
+.the-search-cont-button button{
+  width:300px;
+  border:none;
+  color:white;
+  padding:20px;
+  background-color:  #0cc902;
+  border-radius: 5px;
+}
+.the-search-cont-button button:hover{
+        background-color:  #089901;
+}
+</style>
 
 
 
@@ -262,6 +282,10 @@ box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;      list-style-type: none;
     .container-3 img {
       width: 90%
     }
+    .container-3 img {
+    margin-top:80px;
+  }
+ 
   }
 </style>
 
